@@ -1,0 +1,15 @@
+class Solution(object):
+    def climbStairs(self, N):
+        if N<=2: return N
+        prev_1 = 1
+        prev_2 = 2
+        result=0
+        
+         
+        for i in range(2,N):
+            result = prev_1+prev_2
+            prev_1=prev_2
+            prev_2= result
+            
+        return result 
+     
