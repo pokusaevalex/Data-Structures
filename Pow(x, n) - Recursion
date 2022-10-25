@@ -1,0 +1,14 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1 
+        if n <0:
+            return self.myPow(1/x,-n)
+        #n is even
+        elif n%2==0:
+            temp = self.myPow(x, n//2)
+            return temp*temp
+        #n is odd
+        else:
+            return x * self.myPow(x,n-1)
+        
