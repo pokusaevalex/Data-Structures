@@ -1,0 +1,17 @@
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        dic={}
+        # keys     value
+        #london     new york
+        # new york   Lima
+        # Lima      San Paulo
+        for sub in paths:
+            if sub[0] not in dic.keys():
+                dic[sub[0]]=sub[1]
+                
+        for i in dic.values():
+            if i not in dic.keys():
+                return(i)
+            
+            
+                
